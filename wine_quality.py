@@ -55,8 +55,17 @@ model.fit(X_train, Y_train)
 X_test_prediction = model.predict(X_test)
 test_data_accuracy = accuracy_score(X_test_prediction, Y_test)
 print('Accuracy : ', test_data_accuracy)
-Accuracy :  0.925
+Accuracy :  0.9375
 
+svm_classifier = SVC(kernel='linear')
+svm_classifier.fit(X_train, Y_train)
+y_pred = svm_classifier.predict(X_test)
+accuracy = accuracy_score(y_pred,Y_test)
+print('Accuracy : ', test_data_accuracy)
+Accuracy :  0.921875
+
+cm = confusion_matrix(Y_test, y_pred)
+print(cm)
 
 input_data = (7.5,0.5,0.36,6.1,0.071,17.0,102.0,0.9978,3.35,0.8,10.5)
 
